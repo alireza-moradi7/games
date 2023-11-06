@@ -1,0 +1,89 @@
+@use '../layouts/' as *;
+@use '../utils/' as *;
+
+@mixin header() {
+  header {
+    @include Flex(row, nowrap, space-between, center);
+    grid-area: 1/1/4/-1;
+
+    [data-profile="hero"] {
+      background: $lightGreen-1;
+      transform: translate(5rem, -2rem);
+    }
+
+    [data-profile="monster"] {
+      background: $lightYellow-1;
+      transform: translate(-5rem, -2rem);
+    }
+
+    [data-profile="monster"],
+    [data-profile="hero"] {
+      width: 12rem;
+      height: 12rem;
+      border: solid .5rem $white;
+      border-radius: 100%;
+    }
+
+    #heroName {
+      top: 13rem;
+      left: 32rem;
+    }
+
+    #monsterName {
+      top: 13rem;
+      right: 32rem;
+    }
+
+    #heroName,
+    #monsterName {
+      position: absolute;
+      font: {
+        family: 'Poppins-B';
+        size: 3rem;
+      }
+      color: $white;
+    }
+
+    progress {
+      width: 30rem;
+      height: 3rem;
+      position: absolute;
+      top: 18rem;
+      border: solid .2rem $white;
+      border-radius: .5rem;
+      transition: all 1s linear forwards;
+
+      &::-webkit-progress-bar {
+        background: $white;
+      }
+
+      &::-webkit-progress-value {
+        background: $lightRed-1;
+      }
+    }
+
+    [name="herosHealth"] {
+      left: 32rem;
+    }
+
+    [name="monstersHealth"] {
+      right: 32rem;
+    }
+
+    #herosHealthAmount,
+    #monstersHealthAmount {
+      position: absolute;
+      top: 13rem;
+      font-size: 3rem;
+      color: $white;
+    }
+
+    #herosHealthAmount {
+      left: 55rem;
+    }
+
+    #monstersHealthAmount {
+      right: 55rem;
+    }
+  }
+}

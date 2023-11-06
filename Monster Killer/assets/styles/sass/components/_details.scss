@@ -1,0 +1,69 @@
+@use '../layouts/' as *;
+@use '../utils/' as *;
+
+@mixin details() {
+  #game-details {
+    @include Grid(8, 8);
+    grid-area: 4/8/-2/-2;
+    background: $white;
+    border-radius: 1rem;
+
+    h1 {
+      grid-area: 1/1/3/-1;
+      justify-self: center;
+      align-self: center;
+      font: {
+        family: 'Poppins-B';
+        size: 4rem;
+      }
+    }
+
+    table {
+      @include Grid(5, 4);
+      grid-area: 4/2/-2/-2;
+      width: 125%;
+      font-size: 2rem;
+      transform: translateX(-2rem);
+
+      thead {
+        @include Grid(1, 4);
+        grid-area: 1/1/2/-1;
+
+        tr {
+          @include Grid(1, 4);
+          grid-area: 1/1/-1/-1;
+        }
+      }
+
+      tbody {
+        @include Grid(5, 4);
+        grid-area: 2/1/-1/-1;
+
+        #heros-detail {
+          @include Grid(1, 4);
+          grid-area: 1/1/3/-1;
+          align-self: center;
+        }
+
+        #monsters-detail {
+          @include Grid(1, 4);
+          grid-area: 3/1/-1/-1;
+          align-self: center;
+        }
+
+        .attack-mode {
+          grid-column: 2/3;
+          justify-self: center;
+          font-size: 2.5rem;
+        }
+
+        #heros-attack-damage,
+        #monsters-attack-damage,
+        .heros-heal,
+        .monsters-heal {
+          justify-self: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../layouts/' as *;
+@use '../utils/' as *;
+
+@mixin gameResult() {
+  #gameResult {
+    @include Grid(2, 12);
+    display: none;
+    grid-area: 1/1/-1/-1;
+    position: relative;
+    background: $white;
+    border-radius: 1rem;
+    animation: grow-up 1s linear forwards;
+    z-index: 1;
+
+    h1 {
+      grid-area: 1/1/2/-1;
+      justify-self: center;
+      align-self: end;
+      font: {
+        family: 'Poppins-B';
+        size: 8rem;
+      }
+    }
+
+    button {
+      grid-area: 2/1/-1/-1;
+      justify-self: center;
+      align-self: center;
+      width: 30%;
+      height: 20%;
+      font: {
+        family: 'Poppins-R';
+        size: 2rem;
+      }
+      background: $lightBlue-4;
+      color: $white;
+      border: none;
+      border-radius: .5rem;
+      cursor: pointer;
+    }
+  }
+}

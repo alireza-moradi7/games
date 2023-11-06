@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta data -->
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="monster, hero, monster killer, web game" />
+    <meta name="description" content="awesome project 😉" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Alireza Moradi" />
+    <!-- title -->
+    <title>Monster Killer</title>
+    <link 
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./assets/pictures/icons/favicon.png"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="./assets/styles/css/main.css" />
+    <!-- scripts -->
+    <script src="./assets/scripts/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span data-profile="hero"></span>
+        <span data-profile="monster"></span>
+
+        <span id="heroName">Hero</span>
+        <span id="monsterName">Monster</span>
+
+        <progress min="0" max="100" value="100" name="herosHealth"></progress>
+        <progress min="0" max="100" value="100" name="monstersHealth"></progress>
+
+        <span id="herosHealthAmount">100%</span>
+        <span id="monstersHealthAmount">100%</span>
+      </header>
+
+      <section id="gameResult">
+        <h1></h1>
+        <button>play again</button>
+      </section>
+
+      <section id="attackOptions">
+        <h1>Attack Options</h1>
+        <ul>
+          <li id="attack">🤜 Attack</li>
+          <li id="strongAttack">💪 Strong Attack</li>
+          <li id="heal">💝 Heal <span>3</span></li>
+        </ul>
+      </section>
+
+      <section id="game-details">
+        <h1>Game Details</h1>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Attack</th>
+              <th>Damage</th>
+              <th>Heal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="heros-detail">
+              <td>Hero</td>
+              <td class="attack-mode"></td>
+              <td id="heros-attack-damage"></td>
+              <td class="heros-heal"> - </td>
+            </tr>
+            <tr id="monsters-detail">
+              <td>Monster</td>
+              <td class="attack-mode"></td>
+              <td id="monsters-attack-damage"></td>
+              <td class="monsters-heal"> - </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+@use '../global/' as *;
+@use '../layouts/' as *;
+@use '../components/' as *;
+@use '../utils/' as *;
+
+body {
+  @include Grid(12, 12);
+  background: linear-gradient(
+    to bottom right,
+    $lightBlue-1, $lightBlue-2,
+    $lightBlue-3, $lightBlue-4
+  );
+
+  main {
+    @include Grid(8, 12);
+    grid-area: 2/2/-2/-2;
+    background: $darkBlue-1;
+    border-radius: 1rem;
+
+    @include header();
+    @include attackOptions();
+    @include details();
+    @include gameResult();
+  }
+}
